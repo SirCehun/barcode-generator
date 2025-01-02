@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="cs" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generátor čárových kódů</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="bi bi-moon-fill"></i>
+    </button>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1 class="app-title">Generování čárových kódů</h1>
+            </div>
+            <div class="card-body">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="single-tab" data-bs-toggle="tab" data-bs-target="#single" type="button" role="tab" aria-controls="single" aria-selected="true">
+                            Jednotlivý kód
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="bulk-tab" data-bs-toggle="tab" data-bs-target="#bulk" type="button" role="tab" aria-controls="bulk" aria-selected="false">
+                            Hromadné generování
+                        </button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="barcodeTabsContent">
+                    <!-- Jednotlivý kód -->
+                    <div class="tab-pane fade show active" id="single" role="tabpanel" aria-labelledby="single-tab">
+                        <div class="card">
+                            <div class="card-body">
+                                <form id="single-form">
+                                    <div class="form-group">
+                                        <label for="single-text">Kód:</label>
+                                        <input type="text" class="form-control preview-trigger" id="single-text" placeholder="Zadejte kód" value="123456789" required>
+                                    </div>
+                                    <div class="preview-container" id="single-preview-container">
+                                        <img id="barcode-preview" class="preview-image" src="" alt="Náhled čárového kódu">
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        <button type="button" class="btn btn-primary" onclick="downloadBarcode()">Stáhnout</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hromadné generování -->
+                    <div class="tab-pane fade" id="bulk" role="tabpanel" aria-labelledby="bulk-tab">
+                        <div class="card">
+                            <div class="card-body">
+                                <form id="bulk-form" enctype="multipart/form-data">
+                                    <div class="form-group mb-3">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="input-type" id="manual-input" value="manual" checked>
+                                            <label class="form-check-label" for="manual-input">Ruční zadání</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="input-type" id="csv-input" value="csv">
+                                            <label class="form-check-label" for="csv-input">CSV soubor</label>
+                                        </div>
+                                    </div>
+
+                                    <div id="manual-section">
+                                        <div class="form-group">
+                                            <label for="manual-codes">Kódy:</label>
+                                            <textarea class="form-control" id="manual-codes" name="manual-codes" rows="10" placeholder="Zadejte kódy, každý na nový řádek">123456789</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div id="csv-section" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="csv-file">CSV soubor:</label>
+                                            <input type="file" class="form-control" id="csv-file" name="csv-file" accept=".csv,text/csv">
+                                        </div>
+                                    </div>
+
+                                    <div class="card mt-4">
+                                        <div class="card-body">
+                                            <div class="preview-container" id="bulk-preview-container">
+                                                <img id="bulk-preview" class="preview-image" src="" alt="Náhled čárového kódu">
+                                            </div>
+                                            <div class="text-center mt-3">
+                                                <button type="button" class="btn btn-primary" onclick="downloadBulkBarcodes()">
+                                                    <i class="bi bi-download"></i> Stáhnout ZIP
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>

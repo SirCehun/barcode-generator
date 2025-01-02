@@ -1,0 +1,374 @@
+:root {
+    --primary-color: #6366f1;
+    --hover-color: #818cf8;
+    --background-color: #1e1e2e;
+    --card-background: #27272a;
+    --text-color: #f4f4f5;
+    --border-color: #3f3f46;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    --gradient-start: #0f172a;  /* Velmi tmavě modrá */
+    --gradient-end: #1e40af;    /* Tmavší modrá */
+}
+
+:root, [data-theme="light"] {
+    --background-color: #f8f9fa;
+    --text-color: #2c3e50;
+    --border-color: #cbd5e1;
+    --hover-color: #e2e8f0;
+    --card-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-border: #cbd5e1;
+    --button-bg: #3498db;
+    --button-text: #ffffff;
+    --button-hover: #2980b9;
+    --gradient-start: #0f1d40;  /* Velmi tmavě modrá pro světlý režim */
+    --gradient-end: #2563eb;    /* Tmavší modrá pro světlý režim */
+}
+
+[data-theme="dark"] {
+    --background-color: #212529;
+    --text-color: #f8f9fa;
+    --border-color: #495057;
+    --hover-color: #343a40;
+    --card-bg: #343a40;
+    --input-bg: #2c3338;
+    --input-border: #495057;
+    --button-bg: #3498db;
+    --button-text: #ffffff;
+    --button-hover: #2980b9;
+    --gradient-start: #0f172a;  /* Velmi tmavě modrá pro tmavý režim */
+    --gradient-end: #1e40af;    /* Tmavší modrá pro tmavý režim */
+}
+
+body {
+    font-family: 'Overpass', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0;
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    border-radius: var(--border-radius);
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.form-control, .form-select {
+    border: 1px solid var(--input-border);
+    border-radius: var(--border-radius);
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 16px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--button-bg);
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    outline: none;
+}
+
+.form-text {
+    color: #a1a1aa;
+    font-size: 14px;
+    margin-top: -12px;
+    margin-bottom: 16px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--button-bg);
+    border-color: var(--button-bg);
+    color: var(--button-text);
+}
+
+.btn-primary:hover {
+    background-color: var(--button-hover);
+    border-color: var(--button-hover);
+}
+
+.btn-secondary {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--hover-color);
+}
+
+.btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.preview-container {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0.75rem 0;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-container img {
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+}
+
+[data-theme="dark"] .preview-container img {
+    filter: invert(1);
+}
+
+.nav-tabs {
+    border: none;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 4px;
+    margin-bottom: 20px;
+    display: inline-flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    padding: 8px 16px;
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    background: transparent;
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: var(--hover-color);
+    color: var(--text-color);
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.tab-content {
+    margin-top: 20px;
+}
+
+#preview-container {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#preview-container img {
+    max-width: 100%;
+    height: auto;
+    background-color: white;
+    filter: contrast(1.1);
+}
+
+#preview-container.dragover {
+    background-color: var(--card-bg);
+    border-color: var(--primary-color);
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+.form-check-input {
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-label {
+    color: var(--text-color);
+}
+
+.text-muted {
+    color: #a1a1aa !important;
+}
+
+.input-group-text {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.custom-file-upload {
+    border: 1px solid var(--border-color);
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: var(--hover-color);
+}
+
+.file-name {
+    margin-left: 10px;
+    color: var(--text-color);
+}
+
+.file-input-hidden {
+    display: none;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--hover-color);
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+}
+
+/* Nastavení */
+.settings-section {
+    background-color: var(--background-secondary);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.settings-section h6 {
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Posuvníky */
+.form-range {
+    width: calc(100% - 60px);
+    margin-right: 10px;
+}
+
+.input-group .input-group-text {
+    min-width: 50px;
+    justify-content: center;
+}
+
+/* Barevný výběr */
+.form-control-color {
+    width: 50px;
+    padding: 0.375rem;
+}
+
+/* Náhled */
+.preview-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.app-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 1.5rem;
+    letter-spacing: -0.5px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .card {
+        margin-bottom: 15px;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
