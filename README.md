@@ -1,6 +1,6 @@
 # Generátor čárových kódů
 
-Webová aplikace pro generování čárových kódů s možností jednotlivého i hromadného generování a přizpůsobení vzhledu.
+Moderní webová aplikace pro generování čárových kódů s možností jednotlivého i hromadného generování.
 
 ## Funkce
 
@@ -15,11 +15,11 @@ Webová aplikace pro generování čárových kódů s možností jednotlivého 
   - Náhled prvního kódu
   - Stažení všech kódů v ZIP archivu
 
-- **Nastavení vzhledu**
-  - Šířka a výška čárového kódu
-  - Velikost a typ písma
-  - Barva textu
-  - Okamžitý náhled změn
+- **Další funkce**
+  - Přepínání mezi tmavým a světlým režimem
+  - Responzivní design
+  - Moderní uživatelské rozhraní
+  - Optimalizováno pro všechny moderní prohlížeče
 
 ## Technologie
 
@@ -30,10 +30,11 @@ Webová aplikace pro generování čárových kódů s možností jednotlivého 
 
 - **Frontend**
   - HTML5
-  - CSS3
-  - JavaScript
+  - CSS3 (s podporou moderních vlastností)
+  - JavaScript (ES6+)
   - Bootstrap 5
   - Bootstrap Icons
+  - Google Fonts (Overpass)
 
 ## Instalace
 
@@ -89,15 +90,36 @@ Webová aplikace pro generování čárových kódů s možností jednotlivého 
 2. Zkontrolujte náhled prvního kódu
 3. Klikněte na "Stáhnout ZIP" pro stažení všech kódů
 
-### Nastavení vzhledu
-1. Upravte parametry podle potřeby:
-   - Šířka modulu (0.1 - 1.0)
-   - Výška (5 - 30 mm)
-   - Font textu
-   - Velikost fontu (6 - 20)
-   - Barva textu
-2. Sledujte změny v náhledu
+### Přepínání tématu
+- Klikněte na ikonu měsíce/slunce v pravém horním rohu pro přepnutí mezi tmavým a světlým režimem
+- Vaše preference bude uložena pro příští návštěvu
+
+## Podporované prohlížeče
+- Google Chrome (doporučeno)
+- Mozilla Firefox
+- Safari
+- Microsoft Edge
 
 ## Licence
 
-Tento projekt je licencován pod MIT licencí - viz soubor [LICENSE](LICENSE) pro detaily.
+MIT License
+
+Copyright (c) 2024
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
